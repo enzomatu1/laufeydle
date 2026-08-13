@@ -1,0 +1,21 @@
+@import url(https://db.onlinewebfonts.com/c/0097d67ca497f5bdb6cd10799bf6661f?family=Tilda+Petite);
+.nice{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background-color: rgb(0, 0, 0);
+}
+p.darkmode{
+    color:#e4d4df;
+    font-family: "Tilda Petite";
+    font-size: 100px;
+    line-height: 1.1;
+    margin: 0 0 0 203px;
+}
+p.lightmode{
+    color: #1b2b20;
+    font-family: "Tilda Petite";
+    font-size: 100px;
+    line-height: 1.1;
+    margin: 0 0 0 203px;
+}
