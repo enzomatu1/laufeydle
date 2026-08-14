@@ -2,12 +2,13 @@
 <html>
     <head>
         <title>Laufeydle</title>
-        <link rel="stylesheet" href="static/style.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
         <img src="static/invlogo.png" width="200" style="float: left;">
-        <p class="darkmode">dle</p>
-        </body>
-    <p style="clear:both"></p>
-    <button>ok great this works</button>
+        <p>dle</p>
+        <p style="clear:both"></p>
+        <button onclick="toggleTheme()">ok great this {{ text }} works</button>
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
 </html>
