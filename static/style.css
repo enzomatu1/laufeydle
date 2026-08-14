@@ -28,13 +28,16 @@ p{
 }
 button{
     border: none;
-    background-color: rgb(255, 123, 0);
-    font-family:fantasy;
+    background-color: rgb(255, 255, 255);
+    transition: background-color 0.5s;
     border-radius: 6px;
 }
+body.lightmode button{
+    background-color: black;
+}
 button:hover{
-    background-color: rgb(143, 69, 0);
+    background-color: rgb(255, 201, 139);
 }
 button:active{
-    background-color: black;
+    background-color: rgb(255, 170, 73);
 }
