@@ -9,8 +9,10 @@
         <img src="static/invlogo.png" width="200" style="float: left;">
         <p>dle</p>
         <p style="clear:both"></p>
-        <button onclick="toggleTheme()" id="themeButton">☀️</button>
+        <button class="BotaoTema"onclick="toggleTheme()" id="themeButton"><img src="static/sun.png" alt="Dark mode" width="40" height="40"></button>
         <script src="{{ url_for('static', filename='script.js') }}"></script>
+        <input type="checkbox" id="themeButton">
+        <label for="themeButton"></label>
         <img src="static/laufeyclock1.png" alt="" class="rotating-image">
     </body>
 </html>
