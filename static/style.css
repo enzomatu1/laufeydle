@@ -31,25 +31,58 @@ p{
     line-height: 1.1;
     margin: 0 0 0 203px;
 }
-button{
-    border: none;
-    background-color: #e4d4df;
-    transition: background-color 0.5s;
-    border-radius: 6px;
-}
-body.lightmode button{
-    background-color: #1b2b20;
-}
-button:hover{
-    background-color: rgb(255, 213, 250);
-}
-button:active{
-    background-color: rgb(230, 213, 220);
-}
-#themeButton{
+/* hide the real checkbox, keep it accessible */
+.theme-checkbox{
     position: fixed;
-    top:10px;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* the pill track */
+.theme-slider{
+    position: fixed;
+    top: 10px;
     right: 10px;
+    width: 80px;
+    height: 36px;
+    background-color: #2b2b2b;
+    border-radius: 36px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+/* the round knob (shows the moon in dark mode) */
+.theme-slider::after{
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 30px;
+    height: 30px;
+    background-color: #555;
+    background-image: url(lua.png);
+    background-size: 20px 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.5s;
+}
+
+/* checked = light mode: track lighter, knob slides right and shows the sun */
+.theme-checkbox:checked + .theme-slider{
+    background-color: #d6d6d6;
+}
+.theme-checkbox:checked + .theme-slider::after{
+    transform: translateX(44px);
+    background-color: #f0f0f0;
+    background-image: url(sun.png);
+}
+
+/* keyboard focus ring for accessibility */
+.theme-checkbox:focus-visible + .theme-slider{
+    outline: 2px solid #ff8fd8;
+    outline-offset: 2px;
 }
 
 .rotating-image {
@@ -62,14 +95,6 @@ button:active{
     z-index: -1;
     animation: spin 100s linear infinite; 
 
-}
-.BotaoTema {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
 }
 @keyframes spin {
             from { transform: translate(-50%, 50%) rotate(0deg); }
